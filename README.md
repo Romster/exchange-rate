@@ -33,9 +33,9 @@ Simple Spring Boot application: REST-service to check exchange rates(RUB). It us
 
 ### Примеры запросов
 
->GET http://example.com/currency/api/rate/USD
+>GET http://127.0.0.1:8080/currency/api/usd
 
->GET http://example.com/currency/api/rate/USD/2015-09-24
+>GET http://127.0.0.1:8080/currency/api/rate/USD/2015-09-24
 
 Пример ответа
 
