@@ -20,7 +20,7 @@ import java.util.Date;
 public class ExchangeRateController {
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/currency/api/{code}/{date}")
+    @RequestMapping(method = RequestMethod.GET, value = "/api/rate/{code}/{date}")
     public Rate getRate(@PathVariable("code")
                         String code,
                         @PathVariable("date")
@@ -31,7 +31,7 @@ public class ExchangeRateController {
 
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/currency/api/{code}")
+    @RequestMapping(method = RequestMethod.GET, value = "/api/rate/{code}")
     public Rate getRate(@PathVariable("code")
                         String code) throws ExchangeRateApplicationException {
         Rate r = getCbrClient().getRate(code);
