@@ -24,6 +24,7 @@ Simple Spring Boot application: REST-service to check exchange rates(RUB). It us
     "rate": "<Курс>",
     "date": "<Дата актуальности>"
 }
+
 Ответ содержит следующие поля:
 
 * code [строка 3 символа, обязателен] - трехсимвольный код валюты
