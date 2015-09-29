@@ -22,6 +22,7 @@ import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -46,7 +47,9 @@ public class CBRClientXML implements CBRClient {
     @Override
     public Rate getRate(String code) throws ExchangeRateApplicationException {
         try {
-            Date currDate = new Date();
+            Calendar c = Calendar.getInstance();
+            c.add(Calendar.DATE, 1);  // number of days to add
+            Date currDate = c.getTime();
             BigDecimal rateValue = getDailyRateValue(code, currDate);
             return new Rate(code, rateValue, currDate);
         } catch (IOException ex) {
