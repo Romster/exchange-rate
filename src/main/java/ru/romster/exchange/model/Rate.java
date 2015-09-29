@@ -2,6 +2,7 @@ package ru.romster.exchange.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import ru.romster.exchange.util.DateValueSerializer;
 import ru.romster.exchange.util.RateValueSerializer;
 
 import java.math.BigDecimal;
@@ -24,7 +25,7 @@ public class Rate {
         this.date = date;
     }
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_FORMAT_PATTERN)
+    @JsonSerialize(using = DateValueSerializer.class)
     public Date getDate() {
         return date;
     }
